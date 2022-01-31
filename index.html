@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction - Godot Engine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <header>Godot Docs</header>
+        <a href="#Introduction" class="nav-link"><div class="nav-item"><p>Introduction</p></div></a>
+        <a href="#Before_you_start" class="nav-link"><div class="nav-item"><p>Before you start</p></div></a>
+        <a href="#About_Godot_Engine" class="nav-link"><div class="nav-item"><p>About Godot Engine</p></div></a>
+        <a href="#About_the_documentation" class="nav-link"><div class="nav-item"><p>About the documentation</p></div></a>
+        <a href="#Organization_of_documentation" class="nav-link"><div class="nav-item"><p>Organization of documentation</p></div></a>
+    </nav>
+    
+    <main id="main-doc">
+        <section id="Introduction" class="main-section">
+            <header>Introduction</header>
+            <p>Welcome to the official documentation of Godot Engine, the free and open source community-driven 2D and 3D game engine! Behind this mouthful, you will find a powerful yet user-friendly tool that you can use to develop any kind of game, for any platform and with no usage restriction whatsoever.</p>
+            <p>This page gives a broad presentation of the engine and of the contents of this documentation, so that you know where to start if you are a beginner or where to look if you need info on a specific feature.</p>
+            <code>
+                <pre>
+func _ready():
+    $Label.text = "Hello world!"
+                </pre>
+            </code>
+            <code>
+                <pre>
+extends CanvasLayer
+
+signal start_game
+                </pre>
+            </code>
+            <code>
+                <pre>
+func show_message(text):
+    $Message.text = text
+    $Message.show()
+    $MessageTimer.start()
+                </pre>
+            </code>
+            <code>
+                <pre>
+func show_game_over():
+    show_message("Game Over")
+    # Wait until the MessageTimer has counted down.
+    yield($MessageTimer, "timeout")
+                
+    $Message.text = "Dodge the\nCreeps!"
+    $Message.show()
+    # Make a one-shot timer and wait for it to finish.
+    yield(get_tree().create_timer(1), "timeout")
+    $StartButton.show()
+                </pre>
+            </code>
+            <code>
+                <pre>
+func update_score(score):
+    $ScoreLabel.text = str(score)
+                </pre>
+            </code>
+        </section>
+
+        <section id="Before_you_start" class="main-section">
+            <header>Before you start</header>
+            <p>The <a href="">Tutorials and resources</a> page lists video tutorials contributed by the community. If you prefer video to text, those may be worth a look.</p>
+            <p>In case you have trouble with one of the tutorials or your project, you can find help on the various <a href="">Community channels</a>, especially the Godot Discord community, Q&A, and IRC.</p>
+        </section>
+
+        <section id="About_Godot_Engine" class="main-section">
+            <header>About Godot Engine</header>
+            <p>A game engine is a complex tool, and it is therefore difficult to present Godot in a few words. Here's a quick synopsis, which you are free to reuse if you need a quick writeup about Godot Engine.</p>
+            <p>Godot Engine is a feature-packed, cross-platform game engine to create 2D and 3D games from a unified interface. It provides a comprehensive set of common tools, so users can focus on making games without having to reinvent the wheel. Games can be exported in one click to a number of platforms, including the major desktop platforms (Linux, macOS, Windows) as well as mobile (Android, iOS) and web-based (HTML5) platforms.</p>
+            <p>Godot is completely free and open source under the permissive MIT license. No strings attached, no royalties, nothing. Users' games are theirs, down to the last line of engine code. Godot's development is fully independent and community-driven, empowering users to help shape their engine to match their expectations. It is supported by the Software Freedom Conservancy not-for-profit.</p>
+            <p>For a more in-depth view of the engine, you are encouraged to read this documentation further, especially the Step by step tutorial.</p>
+        </section>
+
+        <section id="About_the_documentation" class="main-section">
+            <header>About the documentation</header>
+            <p>This documentation is continuously written, corrected, edited, and revamped by members of the Godot Engine community. It is edited via text files in the reStructuredText markup language and then compiled into a static website/offline document using the open source Sphinx and ReadTheDocs tools.</p>
+            <p>All the contents are under the permissive Creative Commons Attribution 3.0 (CC-BY 3.0) license, with attribution to "Juan Linietsky, Ariel Manzur and the Godot Engine community".</p>
+        </section>
+
+        <section id="Organization_of_documentation" class="main-section">
+            <header>Organization of documentation</header>
+            <p>This documentation is organized in five sections with an impressively unbalanced distribution of contents – but the way it is split up should be relatively intuitive:</p>
+            <ul>
+                <li>The General section contains this introduction as well as information about the engine, its history, its licensing, authors, etc. It also contains the Frequently asked questions.</li>
+                <li>The Getting started section is the raison d'être of this documentation, as it contains all the necessary information on using the engine to make games. It starts with the Step by step tutorial which should be the entry point for all new users.</li>
+                <li>The Tutorials section can be read as needed, in any order. It contains feature-specific tutorials and documentation.</li>
+                <li>The Development section is intended for advanced users and contributors to the engine development, with information on compiling the engine, developing C++ modules or editor plugins.</li>
+                <li>The Community section gives information related to contributing to engine development and the life of its community, e.g. how to report bugs, help with the documentation, etc. It also points to various community channels like IRC and Discord and contains a list of recommended third-party tutorials outside of this documentation.</li>
+                <li>Finally, the Class reference is the documentation of the Godot API, which is also available directly within the engine's script editor. It is generated automatically from a file in the main source repository, therefore the generated files of the documentation are not meant to be modified. See Contributing to the class reference for details.</li>
+            </ul>
+            <p>In addition to this documentation you may also want to take a look at the various Godot demo projects.</p>
+            <p>Have fun reading and making games with Godot Engine!</p>
+        </section>
+
+    </main>
+
+</body>
+</html>
